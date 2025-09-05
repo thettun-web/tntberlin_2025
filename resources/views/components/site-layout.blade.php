@@ -1,12 +1,12 @@
 <html>
-<header>
+<head>
     <title>Articles overview</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</header>
+</head>
 <body class="">
 <header class="max-w-6xl mx-auto bg-blue-500 text-xl text-white mb-4 flex items-center h-12">
     <div class="mr-10">
-        TNT Berlin!
+        <a href="/articles">TNT Berlin!</a>
     </div>
     <div>
         <a href="/articles">All articles</a>
