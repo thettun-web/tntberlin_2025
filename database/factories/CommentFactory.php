@@ -18,7 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             'article_id' => fake()->numberBetween(1, 10),
-            'author' => faker()->name(),
+            'author' => fake()->name(),
             'content' => fake()->text(),
         ];
     }
