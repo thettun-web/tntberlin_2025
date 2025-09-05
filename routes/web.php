@@ -4,11 +4,11 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorController;
 
-Route::get('articles',
-    [\App\Http\Controllers\ArticleController::class, 'index']);
-Route::get('articles/{id}',
-    [\App\Http\Controllers\ArticleController::class, 'show']);
+Route::get('articles', [\App\Http\Controllers\ArticleController::class, 'index']);
+Route::get('articles/{id}', [\App\Http\Controllers\ArticleController::class, 'show']);
+Route::get('authors', [\App\Http\Controllers\AuthorController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
