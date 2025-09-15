@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
-    public function author()
+    protected $fillable = [
+        'title',
+        'content',
+        'author_id',
+    ];
+    public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class,'author_id');
     }
