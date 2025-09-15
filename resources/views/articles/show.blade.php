@@ -5,10 +5,10 @@
             <div>
                 {{$article->content}}
             </div>
-        <h2 class="text-2xl font-bold mt-4">Comments</h2>
+        <h2 class="text-xl font-bold mt-4 italic">Comments</h2>
         <div>
             @foreach($article->comments as $comment)
-                <div>
+                <div class="text-sm">
                     {{$comment->content}}
                 </div>
             @endforeach
