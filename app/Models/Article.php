@@ -9,12 +9,12 @@ class Article extends Model
 {
     use HasFactory;
 
-    // protected $guarded = [];
+
     protected $fillable = [
         'title',
         'content',
         'author_id',
-        
+
         // Future additions might include:
         'published_at',
         'image_url',
