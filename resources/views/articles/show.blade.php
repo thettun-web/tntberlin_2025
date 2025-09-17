@@ -3,14 +3,20 @@
         <h1 class="text-4xl font-bold">{{$article->title}}</h1>
 
             <div>
-                {{$article->content}}
+                {{$article->content}}<br/>
             </div>
+
+
+        <div class="flex items-center gap-x-2">
+            <a href="articles/{{$article->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>
 
         <form action="/articles/{{$article->id}}" method="post">
             @method('DELETE')
             @csrf
             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">DELETE</button>
         </form>
+
+        </div>
 
         <h2 class="text-xl font-bold mt-4 italic">Comments</h2>
         <div>
