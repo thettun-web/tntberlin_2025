@@ -6,6 +6,9 @@
                 {{$article->content}}<br/>
             </div>
 
+        <div class="mt-2 mb-6 text-gray-600">
+            By <a href="{{ route('authors.show', $article->author) }}" class="font-semibold text-blue-800 hover:underline">{{ $article->author->name }}</a>
+        </div>
 
         <div class="flex items-center gap-x-2">
             <a href="articles/{{$article->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>
