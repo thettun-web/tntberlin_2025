@@ -4,15 +4,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="">
-<header class="max-w-6xl mx-auto bg-blue-500 text-xl text-white mb-4 flex items-center h-12">
-    <div class="mr-10">
-        <a href="/articles">TRADING NEWS</a>
+<header class="max-w-7xl mx-auto py-6 border-b">
+    <div class="text-center mb-4">
+        <a href="/articles" class="font-serif text-5xl font-extrabold text-black">TRADING NEWS</a>
+        <p class="text-sm text-gray-500">Your Daily Source for Market Insights - Berlin, Germany</p>
     </div>
-    <div>
-        <a href="/articles">All articles</a>
-        |
-        <a href="/authors">All authors</a>
-    </div>
+    <nav class="flex justify-center gap-x-8 text-sm font-medium text-gray-800">
+        <a href="/articles" class="hover:underline">All Articles</a>
+        <a href="/authors" class="hover:underline">All Authors</a>
+    </nav>
 </header>
 
 <main class="max-w-6xl mx-auto px-4 py-4">
