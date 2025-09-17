@@ -61,4 +61,10 @@ class ArticleController extends Controller
         // Redirect to show the updated article
         return redirect()->route('articles.show', $article->id);
     }
+    public function destroy($id)
+    {
+        $article = Article::find($id);
+        $article->delete();
+        return redirect()->route('articles.index');
+    }
 }

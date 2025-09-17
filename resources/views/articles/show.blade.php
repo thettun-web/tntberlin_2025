@@ -5,6 +5,13 @@
             <div>
                 {{$article->content}}
             </div>
+
+        <form action="/articles/{{$article->id}}" method="post">
+            @method('DELETE')
+            @csrf
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">DELETE</button>
+        </form>
+
         <h2 class="text-xl font-bold mt-4 italic">Comments</h2>
         <div>
             @foreach($article->comments as $comment)
