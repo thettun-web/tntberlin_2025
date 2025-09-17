@@ -11,8 +11,12 @@
         </div>
 
         <div class="flex items-center gap-x-2">
-            <a href="articles/{{$article->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>
 
+{{--        referral link error--}}
+{{--            <a href="articles/{{$article->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>--}}
+
+{{--            // fix the link error when clicking edit from the page--}}
+            <a href="{{ route('articles.edit', $article->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>
         <form action="/articles/{{$article->id}}" method="post">
             @method('DELETE')
             @csrf
