@@ -22,11 +22,9 @@
 </main>
 
 
-<footer class="bg-blue-900 text-white mt-12 min-h-20">
-
-    <div class="max-w-6xl mx-auto px-20 py-4">
-        Thank you for coming! Yayy!
-    </div>
+<footer class="max-w-7xl mx-auto mt-12 py-8 border-t text-center text-gray-500 text-sm">
+    <p>&copy; 2025 Trading News. All rights reserved.</p>
+    <p>Thank you for coming! Yayy!</p>
 </footer>
 </body>
 
