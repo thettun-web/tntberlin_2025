@@ -39,8 +39,8 @@
         <p class="text-sm text-gray-500">Your Daily Source for Market Insights - Berlin, Germany</p>
     </div>
     <nav class="flex justify-center gap-x-8 text-sm font-medium text-gray-800">
-        <a href="/articles" class="hover:underline">All Articles</a>
-        <a href="/authors" class="hover:underline">All Authors</a>
+        <a href="/articles" class="hover:underline">All ARTICLES</a>
+        <a href="/authors" class="hover:underline">All AUTHORS</a>
     </nav>
 </header>
 
