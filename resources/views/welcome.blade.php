@@ -4,12 +4,13 @@
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
                     @auth
-                        <a
-                            href="{{ url('/dashboard') }}"
-                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
-                        >
-                            Dashboard
-                        </a>
+                        You are logged in. Welcome! {{auth()->user()->name}}!
+{{--                        <a--}}
+{{--                            href="{{ url('/dashboard') }}"--}}
+{{--                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"--}}
+{{--                        >--}}
+{{--                            Dashboard--}}
+{{--                        </a>--}}
                     @else
                         <a href="{{ route('login') }}" class="font-semibold text-blue-600 hover:text-blue-800">
                             Log in
@@ -55,6 +56,10 @@
                 </div>
             </div>
         </section>
+    @if (Route::has('login'))
+        <div class="h-14.5 hidden lg:block"></div>
+    @endif
+</x-site-layout>
 
 {{--    Default Laravel page--}}
 {{--        <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">--}}
@@ -278,10 +283,7 @@
 {{--            </main>--}}
 {{--        </div>--}}
 
-        @if (Route::has('login'))
-            <div class="h-14.5 hidden lg:block"></div>
-        @endif
-    </x-site-layout>
+
 
 
 {{--    <!DOCTYPE html>--}}
