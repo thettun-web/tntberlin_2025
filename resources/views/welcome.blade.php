@@ -11,10 +11,12 @@
                             Dashboard
                         </a>
                     @else
+                        <a href="{{ route('login') }}" class="font-semibold text-blue-600 hover:text-blue-800">
                             Log in
                         </a>
 
                         @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="rounded-md bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white font-semibold ...">
                                 Register
                             </a>
                         @endif
