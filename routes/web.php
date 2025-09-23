@@ -12,6 +12,7 @@ Route::get('articles/{id}', [\App\Http\Controllers\ArticleController::class, 'sh
 Route::get('articles/{id}/edit', [\App\Http\Controllers\ArticleController::class, 'edit'])->name('articles.edit');
 Route::put('articles/{id}', [\App\Http\Controllers\ArticleController::class, 'update'])->name('articles.update');
 Route::delete('articles/{id}', [\App\Http\Controllers\ArticleController::class, 'destroy'])->name('articles.destroy');
+Route::post('comments', [\App\Http\Controllers\CommentController::class, 'store'])->name('comment.store');
 
 Route::get('authors', [AuthorController::class, 'index'])->name('authors.index');
 Route::get('authors/{id}', [AuthorController::class, 'show'])->name('authors.show');
