@@ -51,12 +51,17 @@ class ArticleController extends Controller
     }
     public function update(Request $request, $id)
     {
-        // Load the article from MODEL
-        $article = Article::find($id);
-        $article->update([
-            'title' => $request->title,
-            'content' => $request->content
+        // Validate the data
+        $validatedData = $request->validate([
+            'title' => ['required', 'string', 'max:50', 'min:10'],
+            'content' => ['required', 'string'],
         ]);
+
+        // Load the article from MODEL
+        $article = Article::findOrFail($id);
+
+        // Update the changes
+        $article->update($validatedData);
 
         // Redirect to show the updated article
         return redirect()->route('articles.show', $article->id);
