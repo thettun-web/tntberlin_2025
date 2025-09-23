@@ -34,18 +34,20 @@
             @endforeach
             <br/>
 
-            <form action="" method="post"
-                  @csrf
-                <div>
-                    <label for="content">Share your idea</label><br/>
-                    <textarea name="content" class="bg-gray-200 p-2 w-3/4">{{old('content')}}</textarea><br/>
-                    @error('content')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-            <br/>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Comment</button>
+            <form action="/comments" method="post">
+                    @csrf
 
+                    <input type="hidden" name="article_id" value="{{$article->id}}"/>
+                    <div>
+                        <label for="content">Share your idea</label><br/>
+                        <textarea name="content" class="bg-gray-200 p-2 w-3/4">{{old('content')}}</textarea><br/>
+                        @error('content')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <br/>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Comment</button>
+            </form>
         </div>
     </main>
 </x-site-layout>
