@@ -80,6 +80,14 @@
     <nav class="flex justify-center gap-x-8 text-sm font-medium text-gray-800">
         <a href="{{ route('articles.index') }}" class="hover:underline">All Articles</a>
         <a href="{{ route('authors.index') }}" class="hover:underline">All Authors</a>
+
+        @auth
+
+        <form method="POST" action="{{route('logout')}}">
+            @csrf
+            <button type="submit" class="hover:underline">{{auth()->user()->name}} | Log Out</button>
+        </form>
+        @endauth
     </nav>
 </header>
 
