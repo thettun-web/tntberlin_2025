@@ -41,7 +41,7 @@ class ArticleController extends Controller
         $article = Article::create([
             'title' => $request->title,
             'content' => $request->content,
-            'author_id' => 1,
+            'author_id' => auth()->user()->id,
         ]);
         return redirect()->route('articles.show', $article->id);
     }
