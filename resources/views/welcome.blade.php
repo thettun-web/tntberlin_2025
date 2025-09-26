@@ -30,10 +30,14 @@
             <h1 class="text-5xl font-extrabold text-gray-900">Your Hub for Financial News and Analysis</h1>
             <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Join a community of market enthusiasts. Read insightful articles, publish your own analysis, and engage in meaningful discussions.</p>
             <div class="mt-8">
-                <a href="/articles" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Read the Latest Articles</a>
+                <a href="/articles" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Read the Articles</a>
             </div>
         </section>
-
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Latest News</h2>
+            </div>
+        </section>
         <section class="py-20 px-6">
             <div class="container mx-auto text-center">
                 <h2 class="text-3xl font-bold mb-12">Engage with the Market in Three Simple Ways</h2>
