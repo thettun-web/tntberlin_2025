@@ -36,6 +36,20 @@
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">Latest News</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    @foreach ($latestArticles as $article)
+                        <div class="bg-gray-50 border rounded-lg p-6 shadow-sm">
+                            <h3 class="font-serif text-xl font-bold mb-2">
+                                <a href="{{ route('articles.show', $article) }}" class="hover:text-blue-600">{{ $article->title }}</a>
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                By <a href="{{ route('authors.show', $article->author) }}" class="font-semibold hover:underline">{{ $article->author->name }}</a>
+                            </p>
+                            <p class="text-gray-700">
+                                {{ Str::limit($article->content, 120) }}
+                            </p>
+                        </div>
+                    @endforeach
             </div>
         </section>
         <section class="py-20 px-6">
