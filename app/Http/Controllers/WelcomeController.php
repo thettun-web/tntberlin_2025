@@ -11,6 +11,6 @@ class WelcomeController extends Controller
     {
 //        dd(vars: 'stop from index in welcomecontroller');
         $latestArticles = Article::latest()->take(3)->get();
-        return view('welcome');
+        return view('welcome',['latestArticles' => $latestArticles]);
     }
 }
