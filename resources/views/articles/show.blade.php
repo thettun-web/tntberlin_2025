@@ -9,7 +9,8 @@
         <div class="mt-2 mb-6 text-gray-600">
             By <a href="{{ route('authors.show', $article->author) }}" class="font-semibold text-blue-800 hover:underline">{{ $article->author->name }}</a>
         </div>
-
+        
+    @if (auth()->id() === $article->author_id)
         <div class="flex items-center gap-x-2">
 
 {{--        referral link error--}}
@@ -22,8 +23,8 @@
             @csrf
             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">DELETE</button>
         </form>
-
         </div>
+    @endif
 
         <h2 class="text-xl font-bold mt-4 italic">Comments</h2>
         <div>
