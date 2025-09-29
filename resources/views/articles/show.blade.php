@@ -9,14 +9,9 @@
         <div class="mt-2 mb-6 text-gray-600">
             By <a href="{{ route('authors.show', $article->author) }}" class="font-semibold text-blue-800 hover:underline">{{ $article->author->name }}</a>
         </div>
-        
+
     @if (auth()->id() === $article->author_id)
         <div class="flex items-center gap-x-2">
-
-{{--        referral link error--}}
-{{--            <a href="articles/{{$article->id}}/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>--}}
-
-{{--            // fix the link error when clicking edit from the page--}}
             <a href="{{ route('articles.edit', $article->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>
         <form action="/articles/{{$article->id}}" method="post">
             @method('DELETE')
