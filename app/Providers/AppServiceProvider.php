@@ -21,7 +21,8 @@ class AppServiceProvider extends ServiceProvider
         // Rule for updating / deleting an article
         Gate::define('manage-article', function (User $user, Article $article) {
             // Admins can manage any article, or the user must be the author.
-            return $user->is_admin || $user->id === $article->article_id;
+            return $user->is_admin || $user->id == $article->author_id;
+            // Changed the strict compare operator === to loose operator == to ignore the data type
     });
 
         // Rule for deleting a comment
