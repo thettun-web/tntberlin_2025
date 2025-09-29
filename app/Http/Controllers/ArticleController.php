@@ -10,7 +10,7 @@ class ArticleController extends Controller
     public function index()
     {
         // fetch articles from DB
-        $articles = \App\Models\Article::all();
+        $articles = Article::all();
 
         //dd($articles); // to analyse what you loaded
 
@@ -21,7 +21,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         // fetch the specific article that is requested
-        $article = \App\Models\Article::find($id);
+        $article = Article::find($id);
 
         // send article to its view
         // return response
@@ -48,9 +48,12 @@ class ArticleController extends Controller
     public function edit($id)
     {
         // fetch the specific article that is requested
-        $article = \App\Models\Article::find($id);
+        $article = Article::find($id);
 
-        // send article to edit
+        // Authorization Check
+        if (auth()->id() != $article->author->id) {
+            abort(403);
+        }
         // return response
         return view('articles.edit', compact('article'));
     }
