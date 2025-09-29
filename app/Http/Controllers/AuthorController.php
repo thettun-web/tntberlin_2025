@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Author;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,8 +9,8 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        // load the needed data
-        $authors = \App\Models\User::all();
+        // Get all users WHERE the 'is_admin' column is false
+        $authors = User::where('is_admin',false)->get();
         // send to view + return response
         return view('authors.index', compact('authors'));
     }
