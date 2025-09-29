@@ -29,7 +29,10 @@
         <div>
             @foreach($article->comments as $comment)
                 <div class="text-sm">
-                    {{$comment->content}}
+                    <p>{{ $comment->content }}</p>
+                    <p class="text-xs text-gray-500 mt-1">
+                        By: {{$comment->author->name}}
+                    </p>
                 </div>
             @endforeach
             <br/>
