@@ -15,8 +15,8 @@ class CommentController extends Controller
         ]);
         Comment::create([
             'article_id' => $request->article_id,
-            'author' => 'random name',
             'content' => $request->content,
+            'author_id' => auth()->id(),
         ]);
 
         return redirect()->route('articles.show', $request->article_id);
