@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +21,7 @@ class ArticleFactory extends Factory
 
             'title' => fake()->sentence(),
             //'author' => fake()->name(),
-            'author_id' => fake()->numberBetween(1,10),
+            'author_id' => User::inRandomOrder()->first()->id,
             'content' => fake()->text(500),
              // table->foreignId(column: 'author_id'),
             //
