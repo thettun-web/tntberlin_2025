@@ -77,6 +77,9 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         $article = Article::find($id);
+        if (auth()->id() != $article->author->id) {
+            abort(403);
+        }
         $article->delete();
         return redirect()->route('articles.index');
     }
