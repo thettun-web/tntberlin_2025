@@ -51,7 +51,7 @@ class ArticleController extends Controller
         $article = Article::find($id);
 
         // Authorization Check
-        if (auth()->id() != $article->author->id) {
+        if (auth()->user()->cannot('manage-article', $article)) {
             abort(403);
         }
         // return response
