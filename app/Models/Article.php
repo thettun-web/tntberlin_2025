@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
-
-
-    public mixed $article_id;
     protected $fillable = [
         'title',
         'content',

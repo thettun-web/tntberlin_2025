@@ -10,16 +10,17 @@
             By <a href="{{ route('authors.show', $article->author) }}" class="font-semibold text-blue-800 hover:underline">{{ $article->author->name }}</a>
         </div>
 
-    @if (auth()->id() === $article->author_id)
+
+    @can('manage-article', $article)
         <div class="flex items-center gap-x-2">
-            <a href="{{ route('articles.edit', $article->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>
-        <form action="/articles/{{$article->id}}" method="post">
-            @method('DELETE')
-            @csrf
-            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">DELETE</button>
-        </form>
+                <a href="{{ route('articles.edit', $article->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">EDIT</a>
+            <form action="/articles/{{$article->id}}" method="post">
+                @method('DELETE')
+                @csrf
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">DELETE</button>
+            </form>
         </div>
-    @endif
+    @endcan
 
         <h2 class="text-xl font-bold mt-4 italic">Comments</h2>
         <div>

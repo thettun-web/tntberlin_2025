@@ -59,14 +59,19 @@ class ArticleController extends Controller
     }
     public function update(Request $request, $id)
     {
+        // Load the article from MODEL
+        $article = Article::findOrFail($id);
+
+        // Authorization Check
+        if (auth()->user()->cannot('manage-article', $article)) {
+            abort(403);
+        }
+
         // Validate the data
         $validatedData = $request->validate([
             'title' => ['required', 'string', 'max:50', 'min:10'],
             'content' => ['required', 'string'],
         ]);
-
-        // Load the article from MODEL
-        $article = Article::findOrFail($id);
 
         // Update the changes
         $article->update($validatedData);
@@ -77,7 +82,9 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         $article = Article::find($id);
-        if (auth()->id() != $article->author->id) {
+
+        // Authorization Check
+        if (auth()->user()->cannot('manage-article', $article)) {
             abort(403);
         }
         $article->delete();
