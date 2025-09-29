@@ -10,6 +10,9 @@
             By <a href="{{ route('authors.show', $article->author) }}" class="font-semibold text-blue-800 hover:underline">{{ $article->author->name }}</a>
         </div>
 
+        {{--        Debug author id and user id mismatch--}}
+        {{--        {{ dd('Logged-in User ID:', auth()->id(), 'Article Author ID:', $article->author_id) }}--}}
+        {{--        Comes out that user ID is an integer and author ID is a string "12"--}}
 
     @can('manage-article', $article)
         <div class="flex items-center gap-x-2">
