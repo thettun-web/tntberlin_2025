@@ -4,7 +4,7 @@
 
     @foreach($articles as $article)
     <div>
-        <a href="/articles/{{$article->id}}">{{ $article->title }}</a>
+        <a href="/articles/{{$article->id}}" class="text-lg text-blue-600 hover:underline">{{ $article->title }}</a>
     </div>
     @endforeach
 </main>
