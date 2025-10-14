@@ -21,6 +21,7 @@ class CommentFactory extends Factory
             'article_id' => Article::inRandomOrder()->first()->id,
             'author_id' => User::inRandomOrder()->first()->id,
             'content' => fake()->paragraph(),
+//            'rating' => fake()->boolean(75),
         ];
     }
 }
