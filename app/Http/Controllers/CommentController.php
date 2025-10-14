@@ -10,15 +10,17 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'article_id' => 'required',
-            'content' => ['required', 'string'],
+            'article_id' => 'required|exists:articles,id',
+            'content' => 'required|string|max:2000',
+            'rating' => 'nullable|integer|min:1|max:5',
         ]);
         Comment::create([
             'article_id' => $request->article_id,
             'content' => $request->content,
             'author_id' => auth()->id(),
+            'rating'     => $request->rating,
         ]);
 
-        return redirect()->route('articles.show', $request->article_id);
+        return back()->with('success', 'Thank you for your review!');
     }
 }

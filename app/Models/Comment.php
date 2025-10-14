@@ -13,6 +13,7 @@ class Comment extends Model
         'article_id',
         'author_id',
         'content',
+        'rating',
     ];
     public function author()
     {
